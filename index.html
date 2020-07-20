@@ -16,8 +16,283 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background-image="img/envelopes.jpg">
+					<h2>Templates and template engines</h2>
+
+					<p>Tomislav Buljević</p>
+
+					<p>@tomebuljevic</p>
+
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section data-background-image="img/collage.png" data-background-size="1200px	">
+					<section>
+						<h3>About me</h3>
+
+						<p>
+							<ul class="fragment fade-down">
+								<li>senior back-end developer</li>
+								<li>9+ years of experience</li>
+								<li>working for Factory for about a year and a half now</li>
+								<li>when not coding, likes to eat and drink well</li>
+								<li>Sci-Fi and fantasy enthusiast</li>
+								<li>loves card games and board games</li>
+							</ul>
+						</p>
+					</section>
+				</section>
+
+				<section data-background-image="img/envelopes.jpg">
+					<section><h3>What are templates, exactly?</h3></section>
+					<section>
+						<h4>HTML patterns in which content is placed</h4>
+						<p>
+							When it comes to HTML and programming logic, templates are a way to
+
+							<ul>
+								<li class="fragment fade-down">make your HTML elements repeatable <span class="fragment fade-down">and reusable</span></li>
+								<li class="fragment fade-down">apply complex programming structures onto the displayed view</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h4>Base structure of a web app</h4>
+						<p>
+						<ul>
+							<li class="fragment fade-down">business logic (connection to the database, extracting data, modifying data, etc.)</li>
+							<li class="fragment fade-down">presentation logic (HTML elements, styling, browser modifications - Javascript, etc.)</li>
+						</ul>
+
+						<span class="fragment fade-down">Templates represent <strong>middleware</strong> between the two.</span>
+						</p>
+					</section>
+					<section>
+						<h4>Benefits of templates</h4>
+						<p>
+							<ul>
+								<li class="fragment fade-down">encourages organization of source code into operationally-distinct layers</li>
+								<li class="fragment fade-down">enhances productivity by reducing unnecessary reproduction of effort</li>
+								<li class="fragment fade-down">enhances teamwork by allowing separation of work based on skill-set (e.g., artistic vs. technical)</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h4>English, please</h4>
+						<p>
+						<ul>
+							<li class="fragment fade-down">easily separates source code based on the type of logic</li>
+							<li class="fragment fade-down">less overall work since one can reuse files</li>
+							<li class="fragment fade-down">better separation of roles in the team</li>
+						</ul>
+						</p>
+					</section>
+				</section>
+
+				<section data-background-image="img/envelopes.jpg">
+					<section><h3>OK, so how do we apply them?</h3></section>
+					<section>
+						<h4>Template engines</h4>
+						<p class="fragment fade-down">
+							Special libraries which transpile certain programming structures into pseudo-code for use in templates.
+						</p>
+					</section>
+					<section>
+						<h4>So, what templating engines are there?</h4>
+						<p class="fragment fade-down">
+
+							For PHP only? There's a lot.
+
+							<ul class="fragment fade-down">
+								<li>PHP (yes, it started out as a templating engine)</li>
+								<li>Twig</li>
+								<li>Blade</li>
+								<li>Smarty</li>
+								<li>Mustache (multiple programming languages)</li>
+								<li>Volt</li>
+								<li>Dwoo</li>
+								<li>...you get the picture</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h4>And only PHP has templating engines?</h4>
+						<p class="fragment fade-down">
+
+						Absolutely not.
+
+						<ul class="fragment fade-down">
+							<li>Django, Jinja (Python)</li>
+							<li>ERB, HAML, Slim (Ruby)</li>
+							<li>Razor (C#)</li>
+							<li>Heterocefalus, Haiji (Haskell)</li>
+							<li>... to only name a few</li>
+						</ul>
+						</p>
+					</section>
+					<section>
+						<h4>Questions?</h4>
+					</section>
+					<section>
+						<h4>Lead me to the examples, good sir!</h4>
+					</section>
+				</section>
+
+				<section data-background-image="img/envelopes.jpg">
+					<section><h3>Problems solved by using templates</h3></section>
+					<section data-background-image="img/spaghetti.jpg">
+						<h4>Spaghetti code</h4>
+						<p class="fragment fade-down">
+							By separating business logic from the presentation layer, the code can be easier to read and maintain.
+						</p>
+					</section>
+					<section data-background-image="img/spaghetti.jpg">
+						<h4>Syntax problems</h4>
+						<p class="fragment fade-down">
+							By using low-level syntax and easy-to-read pseudo-code, frontend developers can, without intimate knowledge of a programming language, make sense of the presentation logic and change it accordingly.
+						</p>
+					</section>
+					<section data-background-image="img/spaghetti.jpg">
+						<h4>Low entry threshold</h4>
+						<p class="fragment fade-down">
+							Any template engine syntax can be learned in a very short period of time which enables for fast learning and instant onboarding.
+						</p>
+					</section>
+				</section>
+
+				<section data-background-image="img/envelopes.jpg">
+					<section>
+						<h3>Twig</h3>
+						<p>
+							<img style="float: left; width: 45%;" src="img/twig.png" alt="Twig"/>
+
+							<ul class="fragment fade-down" style="float: right;width: 50%;">
+								<li>used in the Symfony framework</li>
+								<li>based on the Django and Jinja template engines</li>
+								<li>rich feature package</li>
+								<li>fully extendable</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
+						<h3>Delimiters</h3>
+						<p>
+							Three types:
+
+						<ul class="fragment fade-down">
+							<li><pre><code data-trim data-noescape> {{ ... }} </code></pre></li>
+							<li><pre><code data-trim data-noescape> {# ... #} </code></pre></li>
+							<li><pre><code data-trim data-noescape> {% ... %} </code></pre></li>
+						</ul>
+						</p>
+					</section>
+
+					<section>
+						<h3>Loading and caching priority</h3>
+						<p class="fragment fade-down">
+							Extendable elements (layouts) first, view files later. Layouts are static, view files are not, so it makes sense.
+						</p>
+						<p class="fragment fade-down">
+							Problem: how to pass display values from a view file to a extendable element?
+						</p>
+					</section>
+
+					<section>
+						<h3>Enter blocks!</h3>
+						<p>
+
+							Blocks are placeholders for a value or custom HTML loaded from a dinamically generated view.
+
+							<pre>
+							<code data-trim>
+								{% extends "base.html" %}
+								{% block navigation %}
+								<ul id="navigation">
+								  {% for item in navigation %}
+								  <li>
+									<a href="{{ item.href }}">
+									{% if item.level == 2 %}->{% endif %}
+									{{ item.caption|upper }}
+									</a>
+								  </li>
+								  {% endfor %}
+								</ul>
+								{% endblock navigation %}
+							</code>
+							</pre>
+						</p>
+					</section>
+					<section>
+						<h3>What's in a base.html?</h3>
+						<p>
+						<pre>
+							<code data-trim>
+								...
+								<div class="main">
+									{% block navigation %}
+									{% endblock navigation %}
+
+									{% block content %}
+									{% endblock content %}
+								</div>
+								...
+							</code>
+						</pre>
+						</p>
+					</section>
+					<section>
+						<h3>What about including?</h3>
+						<pre>
+							<code data-trim>
+								{% extends "base.html" %}
+								{% block navigation %}
+								<ul id="navigation">
+								  {% for item in navigation %}
+								  <li>{{ include('nav_item.html.twig') }}</li>
+								  {% endfor %}
+								</ul>
+								{% endblock navigation %}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<pre>
+							<code data-trim>
+								<a href="{{ item.href }}">
+								{% if item.level == 2 %}->{% endif %}
+								{{ item.caption|upper }}
+								</a>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Functional tests</h3>
+						<p>
+							One of the coolest features of Twig since they enable you to almost read the pseudo-code without programming knowledge. Check this out:
+
+							<pre>
+								<code data-trim>
+									{% if foo is defined and foo is not empty %}
+										{% if foo is odd %}
+											odd
+										{% else %}
+											even
+										{% endif %}
+									{% endif %}
+								</code>
+							</pre>
+						</p>
+					</section>
+					<section>
+						<h2>Questions?</h2>
+					</section>
+					<section>
+						<h2>Thank you!</h2>
+					</section>
+				</section>
 			</div>
 		</div>
 
